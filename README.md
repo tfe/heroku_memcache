@@ -5,14 +5,12 @@ Sets a global variable `$heroku_memcache` which you can then use anywhere in you
 
 Note that if you are only going to use memcache through the `Rails.cache` methods (using `config.cache_store = :mem_cache_store`), you should just follow the [Heroku documentation](http://docs.heroku.com/memcache) and *not install this plugin*. Only install this if you need direct access to memcache for something specific (e.g. [`cache_money`](http://github.com/nkallen/cache-money)). Also take care not to cause cache key collisions if you have multiple things/plugins accessing your app's namespace on the Heroku memcache cluster.
 
-----
 
 Installation
 ------------
 
 	script/plugin install git://github.com/tfe/heroku_memcache.git
 
-----
 
 Usage
 -----
@@ -28,21 +26,18 @@ I have something like the following in `initializers/memcache_config.rb`:
 
 If you don't want to run memcache on your development machine, you can probably get away with using an in-memory hash. Just replace `MemCache.new('localhost')` in the above with `{}`. It will behave the same for basic usage.
 
-----
 
 Credit
 ------
 
 This is pretty much straight out of the Heroku memcache private beta docs.
 
-----
 
 Contact
 -------
 
 Problems, comments, and pull requests all welcome. [Find me on GitHub.](http://github.com/tfe/)
 
-----
 
 License
 -------
